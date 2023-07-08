@@ -1,0 +1,59 @@
+[worldserver]
+
+#################################
+#
+# Require certificates to use these feature
+# The item id for the certificate is 20460 and it is bound to the account
+#
+# Default: 1 (enabled)
+#
+
+Appreciation.RequireCertificate.Enabled = 1
+
+#################################
+
+#################################
+#
+# Allow being boosted to a specific level and be given a basic set of equipment
+#
+# Default: 1 (enabled)
+#
+
+Appreciation.LevelBoost.Enabled = 1
+
+#################################
+
+#################################
+#
+# The level to give the player when using the level boost feature
+# Accepted values are 60, 70 and 80
+#
+# Default: 60
+#
+
+Appreciation.LevelBoost.TargetLevel = 60
+
+#################################
+
+#################################
+#
+# The amount of copper to give the player when using the level boost feature
+# Will be disabled if set to 0
+#
+# Default: 2500000 (250 gold)
+#
+
+Appreciation.LevelBoost.IncludedCopper = 2500000
+
+#################################
+
+#################################
+#
+# Allow unlocking flight paths for all continents
+#
+# Default: 1 (enabled)
+#
+
+Appreciation.UnlockContinents.Enabled = 1
+
+#################################
