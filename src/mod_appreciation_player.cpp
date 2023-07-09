@@ -79,12 +79,20 @@ void Appreciation::UpdateProficiencies(Player* player, uint8 specialization)
         player->SetSkill(SKILL_MACES, 0, player->GetMaxSkillValue(SKILL_MACES), player->GetMaxSkillValue(SKILL_MACES));
     }
 
-    if (classId == CLASS_HUNTER || classId == CLASS_PRIEST || classId == CLASS_MAGE || classId == CLASS_WARLOCK || classId == CLASS_DRUID)
+    if (classId == CLASS_HUNTER || classId == CLASS_PRIEST || classId == CLASS_MAGE || classId == CLASS_WARLOCK || (classId == CLASS_DRUID && (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3)))
     {
         if (!player->HasSkill(SKILL_STAVES))
             player->learnSpell(SPELL_STAVES);
 
         player->SetSkill(SKILL_STAVES, 0, player->GetMaxSkillValue(SKILL_STAVES), player->GetMaxSkillValue(SKILL_STAVES));
+    }
+
+    if (classId == CLASS_DRUID && specialization == SPECIALIZATION_2)
+    {
+        if (!player->HasSkill(SKILL_POLEARMS))
+            player->learnSpell(SPELL_POLEARMS);
+
+        player->SetSkill(SKILL_POLEARMS, 0, player->GetMaxSkillValue(SKILL_POLEARMS), player->GetMaxSkillValue(SKILL_POLEARMS));
     }
 
     if (classId == CLASS_PRIEST || classId == CLASS_MAGE || classId == CLASS_WARLOCK)

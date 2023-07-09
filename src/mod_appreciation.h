@@ -42,6 +42,7 @@ enum
 
     SPELL_ONE_HANDED_MACES              = 198,
     SPELL_TWO_HANDED_MACES              = 199,
+    SPELL_POLEARMS                      = 200,
     SPELL_ONE_HANDED_SWORDS             = 201,
     SPELL_TWO_HANDED_SWORDS             = 202,
     SPELL_STAVES                        = 227,
