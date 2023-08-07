@@ -57,7 +57,7 @@ enum
 
 using namespace Acore::ChatCommands;
 
-class Appreciation : public CreatureScript, WorldScript
+class Appreciation : public CreatureScript, PlayerScript, WorldScript
 {
 public:
     Appreciation();
@@ -65,6 +65,9 @@ public:
     // CreatureScript
     bool OnGossipHello(Player* /*player*/, Creature* /*creature*/) override;
     bool OnGossipSelect(Player* /*player*/, Creature* /*creature*/, uint32 /*sender*/, uint32 /*action*/) override;
+
+    // PlayerScript
+    void OnLevelChanged(Player* /*player*/, uint8 /*oldlevel*/) override;
 
     // WorldScript
     void OnAfterConfigLoad(bool /*reload*/) override;
@@ -75,6 +78,7 @@ private:
     uint32 TargetLevel;
     uint32 IncludedCopper;
     bool EnableUnlockContinents;
+    bool RewardAtMaxLevel;
 
     bool HasCertificate(Player* /*player*/);
     std::vector<std::vector<int>> GetItemList(uint32 /*classId*/, uint8 /*specialization*/);

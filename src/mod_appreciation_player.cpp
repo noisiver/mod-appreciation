@@ -1,5 +1,36 @@
 #include "mod_appreciation.h"
 
+void Appreciation::OnLevelChanged(Player* player, uint8 oldlevel)
+{
+    if (!RewardAtMaxLevel)
+        return;
+
+    if (player->GetLevel() == sWorld->getIntConfig(CONFIG_MAX_PLAYER_LEVEL) && oldlevel == sWorld->getIntConfig(CONFIG_MAX_PLAYER_LEVEL) - 1)
+        SendMailTo(player, "Certificate of Appreciation", "We truly appreciate you sticking around, enjoying all that we have to offer. We hope you enjoy this certificate which can be redeemed at the nearest appreciation assistant to receive boosts for your characters.", ITEM_CERTIFICATE, 1);
+}
+
+void SendMailTo(Player* receiver, std::string subject, std::string body, uint32 itemId, uint32 itemCount)
+{
+    uint32 guid = receiver->GetGUID().GetCounter();
+
+    CharacterDatabaseTransaction trans = CharacterDatabase.BeginTransaction();
+    MailDraft* mail = new MailDraft(subject, body);
+    ItemTemplate const* pProto = sObjectMgr->GetItemTemplate(itemId);
+    if (pProto)
+    {
+        Item* mailItem = Item::CreateItem(itemId, itemCount);
+        if (mailItem)
+        {
+            mailItem->SaveToDB(trans);
+            mail->AddItem(mailItem);
+        }
+    }
+
+    mail->SendMailTo(trans, receiver ? receiver : MailReceiver(guid), MailSender(MAIL_NORMAL, 0, MAIL_STATIONERY_GM), MAIL_CHECK_MASK_RETURNED);
+    delete mail;
+    CharacterDatabase.CommitTransaction(trans);
+}
+
 bool Appreciation::HasCertificate(Player* player)
 {
     if (!RequireCertificate)

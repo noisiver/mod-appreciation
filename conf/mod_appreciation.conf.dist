@@ -57,3 +57,14 @@ Appreciation.LevelBoost.IncludedCopper = 2500000
 Appreciation.UnlockContinents.Enabled = 1
 
 #################################
+
+#################################
+#
+# Give the player a certificate of appreciation when reaching max level
+#
+# Default: 0 (disabled)
+#
+
+Appreciation.RewardAtMaxLevel.Enabled = 0
+
+#################################

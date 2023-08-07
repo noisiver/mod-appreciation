@@ -11,4 +11,5 @@ void Appreciation::OnAfterConfigLoad(bool /*reload*/)
         TargetLevel = DEFAULT_LEVEL;
 
     EnableUnlockContinents = sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.Enabled", 1);
+    RewardAtMaxLevel = sConfigMgr->GetOption<bool>("Appreciation.RewardAtMaxLevel.Enabled", 0);
 }
