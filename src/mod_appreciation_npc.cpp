@@ -29,7 +29,7 @@ bool Appreciation::OnGossipSelect(Player* player, Creature* creature, uint32 sen
     {
         ClearGossipMenuFor(player);
 
-        switch (player->GetClass())
+        switch (player->getClass())
         {
         case CLASS_WARRIOR:
             AddGossipItemFor(player, GOSSIP_ICON_CHAT, "I want to be an Arms Warrior", GOSSIP_SENDER_MAIN, GOSSIP_MENU_SPECIALIZATION_1);

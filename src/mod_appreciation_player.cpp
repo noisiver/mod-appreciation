@@ -9,7 +9,7 @@ void Appreciation::OnLevelChanged(Player* player, uint8 oldlevel)
         SendMailTo(player, "Certificate of Appreciation", "We truly appreciate you sticking around, enjoying all that we have to offer. We hope you enjoy this certificate which can be redeemed at the nearest appreciation assistant to receive boosts for your characters.", ITEM_CERTIFICATE, 1);
 }
 
-void SendMailTo(Player* receiver, std::string subject, std::string body, uint32 itemId, uint32 itemCount)
+void Appreciation::SendMailTo(Player* receiver, std::string subject, std::string body, uint32 itemId, uint32 itemCount)
 {
     uint32 guid = receiver->GetGUID().GetCounter();
 
@@ -61,7 +61,7 @@ void Appreciation::UpdateProficiencies(Player* player, uint8 specialization)
 {
     player->SetSkill(SKILL_DEFENSE, 0, player->GetMaxSkillValue(SKILL_DEFENSE), player->GetMaxSkillValue(SKILL_DEFENSE));
 
-    uint8 classId = player->GetClass();
+    uint8 classId = player->getClass();
 
     if ((classId == CLASS_WARRIOR || classId == CLASS_PALADIN) && !player->HasSkill(SKILL_PLATE_MAIL))
         player->learnSpell(SPELL_PLATE_MAIL);
@@ -150,7 +150,7 @@ void Appreciation::UpdateProficiencies(Player* player, uint8 specialization)
 
 void Appreciation::EquipNewItems(Player* player, uint8 specialization)
 {
-    std::vector<std::vector<int>> itemList = GetItemList(player->GetClass(), specialization);
+    std::vector<std::vector<int>> itemList = GetItemList(player->getClass(), specialization);
 
     if (itemList.empty())
         return;
@@ -173,7 +173,7 @@ void Appreciation::EquipNewItems(Player* player, uint8 specialization)
 
                     player->EquipItem(slot, item, true);
 
-                    if (player->GetClass() == CLASS_SHAMAN && specialization == SPECIALIZATION_2 && slot == SLOT_MAIN_HAND)
+                    if (player->getClass() == CLASS_SHAMAN && specialization == SPECIALIZATION_2 && slot == SLOT_MAIN_HAND)
                     {
                         ItemPosCountVec dest;
                         InventoryResult msg = player->CanStoreNewItem(NULL_BAG, NULL_SLOT, dest, itemId, 1);

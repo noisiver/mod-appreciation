@@ -89,6 +89,7 @@ private:
     void GiveCopper(Player* /*player*/);
     void UnlockContinent(Player* /*player*/, uint8 /*continent*/);
     void RemoveCertificate(Player* /*player*/);
+    void SendMailTo(Player* /*receiver*/, std::string /*subject*/, std::string /*body*/, uint32 /*itemId*/, uint32 /*itemCount*/);
 };
 
 #endif
