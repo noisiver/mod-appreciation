@@ -1,11 +1,7 @@
-#ifndef MOD_KICKSTARTER_H
-#define MOD_KICKSTARTER_H
+#ifndef MOD_APPRECIATION_H
+#define MOD_APPRECIATION_H
 
-#include "Chat.h"
-#include "Config.h"
-#include "Player.h"
 #include "ScriptMgr.h"
-#include "ScriptedGossip.h"
 
 enum
 {
@@ -53,43 +49,6 @@ enum
     SPELL_THROWN                        = 2567,
     SPELL_WANDS                         = 5009,
     SPELL_MAIL                          = 8737
-};
-
-using namespace Acore::ChatCommands;
-
-class Appreciation : public CreatureScript, PlayerScript, WorldScript
-{
-public:
-    Appreciation();
-
-    // CreatureScript
-    bool OnGossipHello(Player* /*player*/, Creature* /*creature*/) override;
-    bool OnGossipSelect(Player* /*player*/, Creature* /*creature*/, uint32 /*sender*/, uint32 /*action*/) override;
-
-    // PlayerScript
-    void OnLevelChanged(Player* /*player*/, uint8 /*oldlevel*/) override;
-
-    // WorldScript
-    void OnAfterConfigLoad(bool /*reload*/) override;
-
-private:
-    bool RequireCertificate;
-    bool EnableLevelBoost;
-    uint32 TargetLevel;
-    uint32 IncludedCopper;
-    bool EnableUnlockContinents;
-    bool RewardAtMaxLevel;
-
-    bool HasCertificate(Player* /*player*/);
-    std::vector<std::vector<int>> GetItemList(uint32 /*classId*/, uint8 /*specialization*/);
-    void BoostPlayer(Player* /*player*/, uint8 /*specialization*/);
-    void UpdatePlayerLevel(Player* /*player*/);
-    void UpdateProficiencies(Player* /*player*/, uint8 /*specialization*/);
-    void EquipNewItems(Player* /*player*/, uint8 /*specialization*/);
-    void GiveCopper(Player* /*player*/);
-    void UnlockContinent(Player* /*player*/, uint8 /*continent*/);
-    void RemoveCertificate(Player* /*player*/);
-    void SendMailTo(Player* /*receiver*/, std::string /*subject*/, std::string /*body*/, uint32 /*itemId*/, uint32 /*itemCount*/);
 };
 
 #endif
