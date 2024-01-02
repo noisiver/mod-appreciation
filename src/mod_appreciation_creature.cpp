@@ -23,7 +23,7 @@ public:
         if (sConfigMgr->GetOption<bool>("Appreciation.LevelBoost.Enabled", true))
             AddGossipItemFor(player, GOSSIP_ICON_CHAT, "I want a character boost", GOSSIP_SENDER_MAIN, GOSSIP_MENU_CHOOSE_SPECIALIZATION);
 
-        if (sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.Enabled", true))
+        if (sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.Enabled", true) && (sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.EasternKingdoms.Enabled", true) || sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.Kalimdor.Enabled", true) || sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.Outland.Enabled", true) || sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.Northrend.Enabled", false)))
             AddGossipItemFor(player, GOSSIP_ICON_CHAT, "I want to unlock flight paths", GOSSIP_SENDER_MAIN, GOSSIP_MENU_CHOOSE_CONTINENT);
 
         SendGossipMenuFor(player, GOSSIP_TEXT_DEFAULT, creature->GetGUID());
@@ -109,10 +109,19 @@ public:
         else if (action == GOSSIP_MENU_CHOOSE_CONTINENT)
         {
             ClearGossipMenuFor(player);
-            AddGossipItemFor(player, GOSSIP_ICON_CHAT, "Eastern Kingdoms", GOSSIP_SENDER_MAIN, GOSSIP_MENU_CHOOSE_EASTERN_KINGDOMS);
-            AddGossipItemFor(player, GOSSIP_ICON_CHAT, "Kalimdor", GOSSIP_SENDER_MAIN, GOSSIP_MENU_CHOOSE_KALIMDOR);
-            AddGossipItemFor(player, GOSSIP_ICON_CHAT, "Outland", GOSSIP_SENDER_MAIN, GOSSIP_MENU_CHOOSE_OUTLAND);
-            AddGossipItemFor(player, GOSSIP_ICON_CHAT, "Northrend", GOSSIP_SENDER_MAIN, GOSSIP_MENU_CHOOSE_NORTHREND);
+
+            if (sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.EasternKingdoms.Enabled", true))
+                AddGossipItemFor(player, GOSSIP_ICON_CHAT, "Eastern Kingdoms", GOSSIP_SENDER_MAIN, GOSSIP_MENU_CHOOSE_EASTERN_KINGDOMS);
+
+            if (sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.Kalimdor.Enabled", true))
+                AddGossipItemFor(player, GOSSIP_ICON_CHAT, "Kalimdor", GOSSIP_SENDER_MAIN, GOSSIP_MENU_CHOOSE_KALIMDOR);
+
+            if (sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.Outland.Enabled", true))
+                AddGossipItemFor(player, GOSSIP_ICON_CHAT, "Outland", GOSSIP_SENDER_MAIN, GOSSIP_MENU_CHOOSE_OUTLAND);
+
+            if (sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.Northrend.Enabled", false))
+                AddGossipItemFor(player, GOSSIP_ICON_CHAT, "Northrend", GOSSIP_SENDER_MAIN, GOSSIP_MENU_CHOOSE_NORTHREND);
+
             SendGossipMenuFor(player, GOSSIP_TEXT_CHOOSE_CONTINENT, creature->GetGUID());
         }
         else if (action == GOSSIP_MENU_CHOOSE_EASTERN_KINGDOMS || action == GOSSIP_MENU_CHOOSE_KALIMDOR || action == GOSSIP_MENU_CHOOSE_OUTLAND || action == GOSSIP_MENU_CHOOSE_NORTHREND)

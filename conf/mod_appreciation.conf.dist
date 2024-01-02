@@ -60,6 +60,50 @@ Appreciation.UnlockContinents.Enabled = 1
 
 #################################
 #
+# Allow unlocking flight paths for Eastern Kingdoms
+#
+# Default: 1 (enabled)
+#
+
+Appreciation.UnlockContinents.EasternKingdoms.Enabled = 1
+
+#################################
+
+#################################
+#
+# Allow unlocking flight paths for Kalimdor
+#
+# Default: 1 (enabled)
+#
+
+Appreciation.UnlockContinents.Kalimdor.Enabled = 1
+
+#################################
+
+#################################
+#
+# Allow unlocking flight paths for Outland
+#
+# Default: 1 (enabled)
+#
+
+Appreciation.UnlockContinents.Outland.Enabled = 1
+
+#################################
+
+#################################
+#
+# Allow unlocking flight paths for Northrend
+#
+# Default: 0 (disabled)
+#
+
+Appreciation.UnlockContinents.Northrend.Enabled = 0
+
+#################################
+
+#################################
+#
 # Give the player a certificate of appreciation when reaching max level
 #
 # Default: 0 (disabled)
