@@ -20,7 +20,12 @@ public:
             return true;
         }
 
-        if (sConfigMgr->GetOption<bool>("Appreciation.LevelBoost.Enabled", true))
+        uint32 TargetLevel = sConfigMgr->GetOption<uint32>("Appreciation.LevelBoost.TargetLevel", DEFAULT_LEVEL);
+
+        if (TargetLevel != 60 && TargetLevel != 70 && TargetLevel != 80)
+            TargetLevel = DEFAULT_LEVEL;
+
+        if (sConfigMgr->GetOption<bool>("Appreciation.LevelBoost.Enabled", true) && player->GetLevel() < TargetLevel)
             AddGossipItemFor(player, GOSSIP_ICON_CHAT, "I want a character boost", GOSSIP_SENDER_MAIN, GOSSIP_MENU_CHOOSE_SPECIALIZATION);
 
         if (sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.Enabled", true) && (sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.EasternKingdoms.Enabled", true) || sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.Kalimdor.Enabled", true) || sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.Outland.Enabled", true) || sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.Northrend.Enabled", false)))
