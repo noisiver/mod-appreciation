@@ -553,9 +553,9 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
-                    item = { 36327, -7 };
+                    item = { 39108, 0 };
                 else // Protection
-                    item = { 36327, -45 };
+                    item = { 43846, 0 };
             }
             itemList.push_back(item);
 
@@ -577,9 +577,9 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
-                    item = { 36435, -7 };
+                    item = { 42808, 0 };
                 else // Protection
-                    item = { 36435, -45 };
+                    item = { 43849, 0 };
             }
             itemList.push_back(item);
 
@@ -601,9 +601,9 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
-                    item = { 36329, -7 };
+                    item = { 39888, 0 };
                 else // Protection
-                    item = { 36329, -45 };
+                    item = { 43844, 0 };
             }
             itemList.push_back(item);
 
@@ -629,9 +629,9 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
-                    item = { 36325, -7 };
+                    item = { 43945, 0 };
                 else // Protection
-                    item = { 36325, -45 };
+                    item = { 42827, 0 };
             }
             itemList.push_back(item);
 
@@ -653,9 +653,9 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
-                    item = { 36323, -7 };
+                    item = { 42882, 0 };
                 else // Protection
-                    item = { 36323, -45 };
+                    item = { 39471, 0 };
             }
             itemList.push_back(item);
 
@@ -677,9 +677,9 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
-                    item = { 36328, -7 };
+                    item = { 43940, 0 };
                 else // Protection
-                    item = { 36328, -45 };
+                    item = { 43845, 0 };
             }
             itemList.push_back(item);
 
@@ -701,9 +701,9 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
-                    item = { 36324, -7 };
+                    item = { 39102, 0 };
                 else // Protection
-                    item = { 36324, -45 };
+                    item = { 42884, 0 };
             }
             itemList.push_back(item);
 
@@ -725,9 +725,9 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
-                    item = { 36330, -7 };
+                    item = { 39100, 0 };
                 else // Protection
-                    item = { 36330, -45 };
+                    item = { 42825, 0 };
             }
             itemList.push_back(item);
 
@@ -749,9 +749,9 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
-                    item = { 36326, -7 };
+                    item = { 42835, 0 };
                 else // Protection
-                    item = { 36326, -45 };
+                    item = { 43842, 0 };
             }
             itemList.push_back(item);
 
@@ -772,10 +772,7 @@ private:
             }
             else
             {
-                if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
-                    item = { 36421, -7 };
-                else // Protection
-                    item = { 36421, -45 };
+                item = { 42812, 0 };
             }
             itemList.push_back(item);
 
@@ -797,9 +794,9 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
-                    item = { 36420, -7 };
+                    item = { 42864, 0 };
                 else // Protection
-                    item = { 36420, -45 };
+                    item = { 43926, 0 };
             }
             itemList.push_back(item);
 
@@ -820,7 +817,7 @@ private:
             }
             else
             {
-                item = { 38080, 0 };
+                item = { 43838, 0 };
             }
             itemList.push_back(item);
 
@@ -841,7 +838,7 @@ private:
             }
             else
             {
-                item = { 38081, 0 };
+                item = { 43829, 0 };
             }
             itemList.push_back(item);
 
@@ -862,10 +859,7 @@ private:
             }
             else
             {
-                if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
-                    item = { 36407, -7 };
-                else // Protection
-                    item = { 36407, -45 };
+                item = { 43924, 0 };
             }
             itemList.push_back(item);
 
@@ -891,11 +885,11 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1) // Arms
-                    item = { 38146, 0 };
+                    item = { 42786, 0 };
                 else if (specialization == SPECIALIZATION_2) // Fury
-                    item = { 38181, 0 };
+                    item = { 43883, 0 };
                 else // Protection
-                    item = { 38146, 0 };
+                    item = { 43923, 0 };
             }
             itemList.push_back(item);
 
@@ -921,11 +915,11 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1) // Arms
-                    item = { 38198, 0 };
+                    item = { 42807, 0 };
                 else if (specialization == SPECIALIZATION_2) // Fury
                     item = { 0, 0 };
                 else // Protection
-                    item = { 36449, -45 };
+                    item = { 43843, 0 };
             }
             itemList.push_back(item);
 
@@ -946,7 +940,7 @@ private:
             }
             else
             {
-                item = { 38157, 0 };
+                item = { 39134, 0 };
             }
             itemList.push_back(item);
             break;
@@ -973,11 +967,11 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
-                    item = { 36327, -37 };
+                    item = { 42829, 0 };
                 else if (specialization == SPECIALIZATION_2) // Protection
-                    item = { 36327, -45 };
+                    item = { 43846, 0 };
                 else // Retribution
-                    item = { 36327, -43 };
+                    item = { 39108, 0 };
             }
             itemList.push_back(item);
 
@@ -1003,11 +997,11 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
-                    item = { 36435, -37 };
+                    item = { 42793, 0 };
                 else if (specialization == SPECIALIZATION_2) // Protection
-                    item = { 36435, -45 };
+                    item = { 43849, 0 };
                 else // Retribution
-                    item = { 36435, -43 };
+                    item = { 42808, 0 };
             }
             itemList.push_back(item);
 
@@ -1033,11 +1027,11 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
-                    item = { 36329, -37 };
+                    item = { 42876, 0 };
                 else if (specialization == SPECIALIZATION_2) // Protection
-                    item = { 36329, -45 };
+                    item = { 43844, 0 };
                 else // Retribution
-                    item = { 36329, -43 };
+                    item = { 39888, 0 };
             }
             itemList.push_back(item);
 
@@ -1067,11 +1061,11 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
-                    item = { 36325, -37 };
+                    item = { 42877, 0 };
                 else if (specialization == SPECIALIZATION_2) // Protection
-                    item = { 36325, -45 };
+                    item = { 42827, 0 };
                 else // Retribution
-                    item = { 36325, -43 };
+                    item = { 43945, 0 };
             }
             itemList.push_back(item);
 
@@ -1097,11 +1091,11 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
-                    item = { 36323, -37 };
+                    item = { 43831, 0 };
                 else if (specialization == SPECIALIZATION_2) // Protection
-                    item = { 36323, -45 };
+                    item = { 39471, 0 };
                 else // Retribution
-                    item = { 36323, -43 };
+                    item = { 42882, 0 };
             }
             itemList.push_back(item);
 
@@ -1127,11 +1121,11 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
-                    item = { 36328, -37 };
+                    item = { 42881, 0 };
                 else if (specialization == SPECIALIZATION_2) // Protection
-                    item = { 36328, -45 };
+                    item = { 43845, 0 };
                 else // Retribution
-                    item = { 36328, -43 };
+                    item = { 43940, 0 };
             }
             itemList.push_back(item);
 
@@ -1157,11 +1151,11 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
-                    item = { 36324, -37 };
+                    item = { 42883, 0 };
                 else if (specialization == SPECIALIZATION_2) // Protection
-                    item = { 36324, -45 };
+                    item = { 42884, 0 };
                 else // Retribution
-                    item = { 36324, -43 };
+                    item = { 39102, 0 };
             }
             itemList.push_back(item);
 
@@ -1187,11 +1181,11 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
-                    item = { 36330, -37 };
+                    item = { 42830, 0 };
                 else if (specialization == SPECIALIZATION_2) // Protection
-                    item = { 36330, -45 };
+                    item = { 42825, 0 };
                 else // Retribution
-                    item = { 36330, -43 };
+                    item = { 39100, 0 };
             }
             itemList.push_back(item);
 
@@ -1217,11 +1211,11 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
-                    item = { 36326, -37 };
+                    item = { 43943, 0 };
                 else if (specialization == SPECIALIZATION_2) // Protection
-                    item = { 36326, -45 };
+                    item = { 43842, 0 };
                 else // Retribution
-                    item = { 36326, -43 };
+                    item = { 42835, 0 };
             }
             itemList.push_back(item);
 
@@ -1247,11 +1241,11 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
-                    item = { 36421, -37 };
+                    item = { 43903, 0 };
                 else if (specialization == SPECIALIZATION_2) // Protection
-                    item = { 36421, -45 };
+                    item = { 42812, 0 };
                 else // Retribution
-                    item = { 36421, -43 };
+                    item = { 42864, 0 };
             }
             itemList.push_back(item);
 
@@ -1277,11 +1271,9 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
-                    item = { 36420, -37 };
-                else if (specialization == SPECIALIZATION_2) // Protection
-                    item = { 36420, -45 };
-                else // Retribution
-                    item = { 36420, -43 };
+                    item = { 42791, 0 };
+                else // Protection, Retribution
+                    item = { 43926, 0 };
             }
             itemList.push_back(item);
 
@@ -1307,9 +1299,9 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
-                    item = { 38073, 0 };
+                    item = { 43837, 0 };
                 else // Protection, Retribution
-                    item = { 38080, 0 };
+                    item = { 43829, 0 };
             }
             itemList.push_back(item);
 
@@ -1335,9 +1327,9 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
-                    item = { 35935, 0 };
+                    item = { 38763, 0 };
                 else // Protection, Retribution
-                    item = { 38081, 0 };
+                    item = { 43838, 0 };
             }
             itemList.push_back(item);
 
@@ -1363,11 +1355,9 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
-                    item = { 36407, -37 };
-                else if (specialization == SPECIALIZATION_2) // Protection
-                    item = { 36407, -45 };
-                else // Retribution
-                    item = { 36407, -43 };
+                    item = { 43861, 0 };
+                else // Protection, Retribution
+                    item = { 43924, 0 };
             }
             itemList.push_back(item);
 
@@ -1393,11 +1383,11 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
-                    item = { 36490, -44 };
+                    item = { 39143, 0 };
                 else if (specialization == SPECIALIZATION_2) // Protection
-                    item = { 36518, -45 };
+                    item = { 43923, 0 };
                 else // Retribution
-                    item = { 36532, -41 };
+                    item = { 43883, 0 };
             }
             itemList.push_back(item);
 
@@ -1423,9 +1413,9 @@ private:
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
-                    item = { 36449, -36 };
+                    item = { 42860, 0 };
                 else if (specialization == SPECIALIZATION_2) // Protection
-                    item = { 36449, -45 };
+                    item = { 43843, 0 };
                 else // Retribution
                     item = { 0, 0 };
             }
@@ -1447,7 +1437,7 @@ private:
             }
             else
             {
-                item = { 36215, -40 };
+                item = { 43937, 0 };
             }
             itemList.push_back(item);
 
@@ -1462,7 +1452,7 @@ private:
             }
             else
             {
-                item = { 36435, -40 };
+                item = { 42808, 0 };
             }
             itemList.push_back(item);
 
@@ -1477,7 +1467,7 @@ private:
             }
             else
             {
-                item = { 36217, -40 };
+                item = { 42887, 0 };
             }
             itemList.push_back(item);
 
@@ -1496,7 +1486,7 @@ private:
             }
             else
             {
-                item = { 36213, -40 };
+                item = { 42896, 0 };
             }
             itemList.push_back(item);
 
@@ -1511,7 +1501,7 @@ private:
             }
             else
             {
-                item = { 36211, -40 };
+                item = { 42889, 0 };
             }
             itemList.push_back(item);
 
@@ -1526,7 +1516,7 @@ private:
             }
             else
             {
-                item = { 36216, -40 };
+                item = { 39066, 0 };
             }
             itemList.push_back(item);
 
@@ -1541,7 +1531,7 @@ private:
             }
             else
             {
-                item = { 36212, -40 };
+                item = { 42891, 0 };
             }
             itemList.push_back(item);
 
@@ -1556,7 +1546,7 @@ private:
             }
             else
             {
-                item = { 36218, -40 };
+                item = { 42816, 0 };
             }
             itemList.push_back(item);
 
@@ -1571,7 +1561,7 @@ private:
             }
             else
             {
-                item = { 36214, -40 };
+                item = { 39070, 0 };
             }
             itemList.push_back(item);
 
@@ -1586,7 +1576,7 @@ private:
             }
             else
             {
-                item = { 36421, -40 };
+                item = { 42812, 0 };
             }
             itemList.push_back(item);
 
@@ -1601,7 +1591,7 @@ private:
             }
             else
             {
-                item = { 36420, -40 };
+                item = { 42864, 0 };
             }
             itemList.push_back(item);
 
@@ -1616,7 +1606,7 @@ private:
             }
             else
             {
-                item = { 38080, 0 };
+                item = { 43829, 0 };
             }
             itemList.push_back(item);
 
@@ -1631,7 +1621,7 @@ private:
             }
             else
             {
-                item = { 38081, 0 };
+                item = { 43838, 0 };
             }
             itemList.push_back(item);
 
@@ -1646,7 +1636,7 @@ private:
             }
             else
             {
-                item = { 36407, -40 };
+                item = { 43889, 0 };
             }
             itemList.push_back(item);
 
@@ -1661,7 +1651,7 @@ private:
             }
             else
             {
-                item = { 36602, -40 };
+                item = { 36610, -40 };
             }
             itemList.push_back(item);
 
@@ -1680,7 +1670,7 @@ private:
             }
             else
             {
-                item = { 36616, -40 };
+                item = { 39134, 0 };
             }
             itemList.push_back(item);
             break;
@@ -1696,7 +1686,7 @@ private:
             }
             else
             {
-                item = { 36103, -40 };
+                item = { 43840, 0 };
             }
             itemList.push_back(item);
 
@@ -1711,7 +1701,7 @@ private:
             }
             else
             {
-                item = { 36435, -40 };
+                item = { 42808, 0 };
             }
             itemList.push_back(item);
 
@@ -1726,7 +1716,7 @@ private:
             }
             else
             {
-                item = { 36105, -40 };
+                item = { 42869, 0 };
             }
             itemList.push_back(item);
 
@@ -1745,7 +1735,7 @@ private:
             }
             else
             {
-                item = { 36101, -40 };
+                item = { 43891, 0 };
             }
             itemList.push_back(item);
 
@@ -1760,7 +1750,7 @@ private:
             }
             else
             {
-                item = { 36099, -40 };
+                item = { 43909, 0 };
             }
             itemList.push_back(item);
 
@@ -1775,7 +1765,7 @@ private:
             }
             else
             {
-                item = { 36104, -40 };
+                item = { 43896, 0 };
             }
             itemList.push_back(item);
 
@@ -1790,7 +1780,7 @@ private:
             }
             else
             {
-                item = { 36100, -40 };
+                item = { 39035, 0 };
             }
             itemList.push_back(item);
 
@@ -1805,7 +1795,7 @@ private:
             }
             else
             {
-                item = { 36106, -40 };
+                item = { 39038, 0 };
             }
             itemList.push_back(item);
 
@@ -1820,7 +1810,7 @@ private:
             }
             else
             {
-                item = { 36102, -40 };
+                item = { 39038, 0 };
             }
             itemList.push_back(item);
 
@@ -1835,7 +1825,7 @@ private:
             }
             else
             {
-                item = { 36421, -40 };
+                item = { 42812, 0 };
             }
             itemList.push_back(item);
 
@@ -1850,7 +1840,7 @@ private:
             }
             else
             {
-                item = { 36420, -40 };
+                item = { 42864, 0 };
             }
             itemList.push_back(item);
 
@@ -1865,7 +1855,7 @@ private:
             }
             else
             {
-                item = { 38080, 0 };
+                item = { 43829, 0 };
             }
             itemList.push_back(item);
 
@@ -1880,7 +1870,7 @@ private:
             }
             else
             {
-                item = { 38081, 0 };
+                item = { 43838, 0 };
             }
             itemList.push_back(item);
 
@@ -1895,7 +1885,7 @@ private:
             }
             else
             {
-                item = { 36407, -40 };
+                item = { 43889, 0 };
             }
             itemList.push_back(item);
 
@@ -1910,7 +1900,7 @@ private:
             }
             else
             {
-                item = { 38151, 0 };
+                item = { 43911, 0 };
             }
             itemList.push_back(item);
 
@@ -1925,7 +1915,7 @@ private:
             }
             else
             {
-                item = { 38155, 0 };
+                item = { 42861, 0 };
             }
             itemList.push_back(item);
 
@@ -1940,7 +1930,7 @@ private:
             }
             else
             {
-                item = { 36616, -40 };
+                item = { 39134, 0 };
             }
             itemList.push_back(item);
             break;
@@ -1958,7 +1948,7 @@ private:
             }
             else
             {
-                item = { 35991, -37 };
+                item = { 38737, 0 };
             }
             itemList.push_back(item);
 
@@ -1973,7 +1963,7 @@ private:
             }
             else
             {
-                item = { 36435, -37 };
+                item = { 42793, 0 };
             }
             itemList.push_back(item);
 
@@ -1988,7 +1978,7 @@ private:
             }
             else
             {
-                item = { 35993, -37 };
+                item = { 42842, 0 };
             }
             itemList.push_back(item);
 
@@ -2007,7 +1997,7 @@ private:
             }
             else
             {
-                item = { 35989, -37 };
+                item = { 42792, 0 };
             }
             itemList.push_back(item);
 
@@ -2022,7 +2012,7 @@ private:
             }
             else
             {
-                item = { 35987, -37 };
+                item = { 42788, 0 };
             }
             itemList.push_back(item);
 
@@ -2037,7 +2027,7 @@ private:
             }
             else
             {
-                item = { 35992, -37 };
+                item = { 43863, 0 };
             }
             itemList.push_back(item);
 
@@ -2052,7 +2042,7 @@ private:
             }
             else
             {
-                item = { 35988, -37 };
+                item = { 42789, 0 };
             }
             itemList.push_back(item);
 
@@ -2067,7 +2057,7 @@ private:
             }
             else
             {
-                item = { 35994, -37 };
+                item = { 38736, 0 };
             }
             itemList.push_back(item);
 
@@ -2082,7 +2072,7 @@ private:
             }
             else
             {
-                item = { 35990, -37 };
+                item = { 38741, 0 };
             }
             itemList.push_back(item);
 
@@ -2097,7 +2087,7 @@ private:
             }
             else
             {
-                item = { 36421, -37 };
+                item = { 42791, 0 };
             }
             itemList.push_back(item);
 
@@ -2112,7 +2102,7 @@ private:
             }
             else
             {
-                item = { 36420, -37 };
+                item = { 43874, 0 };
             }
             itemList.push_back(item);
 
@@ -2127,7 +2117,7 @@ private:
             }
             else
             {
-                item = { 35935, 0 };
+                item = { 43836, 0 };
             }
             itemList.push_back(item);
 
@@ -2142,7 +2132,7 @@ private:
             }
             else
             {
-                item = { 37555, 0 };
+                item = { 43837, 0 };
             }
             itemList.push_back(item);
 
@@ -2157,7 +2147,7 @@ private:
             }
             else
             {
-                item = { 36407, -37 };
+                item = { 43861, 0 };
             }
             itemList.push_back(item);
 
@@ -2172,7 +2162,7 @@ private:
             }
             else
             {
-                item = { 36546, -39 };
+                item = { 39121, 0 };
             }
             itemList.push_back(item);
 
@@ -2191,7 +2181,7 @@ private:
             }
             else
             {
-                item = { 36658, -39 };
+                item = { 43828, 0 };
             }
             itemList.push_back(item);
             break;
@@ -2207,7 +2197,7 @@ private:
             }
             else
             {
-                item = { 36327, -7 };
+                item = { 39108, 0 };
             }
             itemList.push_back(item);
 
@@ -2222,7 +2212,7 @@ private:
             }
             else
             {
-                item = { 36435, -7 };
+                item = { 42808, 0 };
             }
             itemList.push_back(item);
 
@@ -2237,7 +2227,7 @@ private:
             }
             else
             {
-                item = { 36329, -7 };
+                item = { 39888, 0 };
             }
             itemList.push_back(item);
 
@@ -2256,7 +2246,7 @@ private:
             }
             else
             {
-                item = { 36325, -7 };
+                item = { 43945, 0 };
             }
             itemList.push_back(item);
 
@@ -2271,7 +2261,7 @@ private:
             }
             else
             {
-                item = { 36323, -7 };
+                item = { 42882, 0 };
             }
             itemList.push_back(item);
 
@@ -2286,7 +2276,7 @@ private:
             }
             else
             {
-                item = { 36328, -7 };
+                item = { 43940, 0 };
             }
             itemList.push_back(item);
 
@@ -2301,7 +2291,7 @@ private:
             }
             else
             {
-                item = { 36324, -7 };
+                item = { 39102, 0 };
             }
             itemList.push_back(item);
 
@@ -2316,7 +2306,7 @@ private:
             }
             else
             {
-                item = { 36330, -7 };
+                item = { 39100, 0 };
             }
             itemList.push_back(item);
 
@@ -2331,7 +2321,7 @@ private:
             }
             else
             {
-                item = { 36326, -7 };
+                item = { 42835, 0 };
             }
             itemList.push_back(item);
 
@@ -2346,7 +2336,7 @@ private:
             }
             else
             {
-                item = { 36421, -7 };
+                item = { 42864, 0 };
             }
             itemList.push_back(item);
 
@@ -2361,7 +2351,7 @@ private:
             }
             else
             {
-                item = { 36420, -7 };
+                item = { 42812, 0 };
             }
             itemList.push_back(item);
 
@@ -2376,7 +2366,7 @@ private:
             }
             else
             {
-                item = { 38080, 0 };
+                item = { 43838, 0 };
             }
             itemList.push_back(item);
 
@@ -2391,7 +2381,7 @@ private:
             }
             else
             {
-                item = { 38081, 0 };
+                item = { 43829, 0 };
             }
             itemList.push_back(item);
 
@@ -2406,7 +2396,7 @@ private:
             }
             else
             {
-                item = { 36407, -7 };
+                item = { 43924, 0 };
             }
             itemList.push_back(item);
 
@@ -2421,7 +2411,7 @@ private:
             }
             else
             {
-                item = { 36532, -41 };
+                item = { 43883, 0 };
             }
             itemList.push_back(item);
 
@@ -2461,11 +2451,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Elemental, Restoration
                 {
-                    item = { 36215, -37 };
+                    item = { 43978, 0 };
                 }
                 else // Enhancement
                 {
-                    item = { 36215, -40 };
+                    item = { 43937, 0 };
                 }
             }
             itemList.push_back(item);
@@ -2497,11 +2487,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Elemental, Restoration
                 {
-                    item = { 36435, -37 };
+                    item = { 42793, 0 };
                 }
                 else // Enhancement
                 {
-                    item = { 36435, -40 };
+                    item = { 42808, 0 };
                 }
             }
             itemList.push_back(item);
@@ -2533,11 +2523,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Elemental, Restoration
                 {
-                    item = { 36217, -37 };
+                    item = { 43830, 0 };
                 }
                 else // Enhancement
                 {
-                    item = { 36217, -40 };
+                    item = { 42887, 0 };
                 }
             }
             itemList.push_back(item);
@@ -2573,11 +2563,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Elemental, Restoration
                 {
-                    item = { 36213, -37 };
+                    item = { 43977, 0 };
                 }
                 else // Enhancement
                 {
-                    item = { 36213, -40 };
+                    item = { 42896, 0 };
                 }
             }
             itemList.push_back(item);
@@ -2609,11 +2599,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Elemental, Restoration
                 {
-                    item = { 36211, -37 };
+                    item = { 42814, 0 };
                 }
                 else // Enhancement
                 {
-                    item = { 36211, -40 };
+                    item = { 42821, 0 };
                 }
             }
             itemList.push_back(item);
@@ -2645,11 +2635,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Elemental, Restoration
                 {
-                    item = { 36216, -37 };
+                    item = { 42890, 0 };
                 }
                 else // Enhancement
                 {
-                    item = { 36216, -40 };
+                    item = { 39887, 0 };
                 }
             }
             itemList.push_back(item);
@@ -2681,11 +2671,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Elemental, Restoration
                 {
-                    item = { 36212, -37 };
+                    item = { 42815, 0 };
                 }
                 else // Enhancement
                 {
-                    item = { 36212, -40 };
+                    item = { 42891, 0 };
                 }
             }
             itemList.push_back(item);
@@ -2717,11 +2707,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Elemental, Restoration
                 {
-                    item = { 36218, -37 };
+                    item = { 42892, 0 };
                 }
                 else // Enhancement
                 {
-                    item = { 36218, -40 };
+                    item = { 42816, 0 };
                 }
             }
             itemList.push_back(item);
@@ -2753,11 +2743,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Elemental, Restoration
                 {
-                    item = { 36214, -37 };
+                    item = { 43976, 0 };
                 }
                 else // Enhancement
                 {
-                    item = { 36214, -40 };
+                    item = { 43981, 0 };
                 }
             }
             itemList.push_back(item);
@@ -2789,11 +2779,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Elemental, Restoration
                 {
-                    item = { 36421, -37 };
+                    item = { 42791, 0 };
                 }
                 else // Enhancement
                 {
-                    item = { 36421, -40 };
+                    item = { 42812, 0 };
                 }
             }
             itemList.push_back(item);
@@ -2825,11 +2815,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Elemental, Restoration
                 {
-                    item = { 36420, -37 };
+                    item = { 43903, 0 };
                 }
                 else // Enhancement
                 {
-                    item = { 36420, -40 };
+                    item = { 42864, 0 };
                 }
             }
             itemList.push_back(item);
@@ -2861,11 +2851,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Elemental, Restoration
                 {
-                    item = { 35935, 0 };
+                    item = { 43836, 0 };
                 }
                 else // Enhancement
                 {
-                    item = { 38080, 0 };
+                    item = { 43829, 0 };
                 }
             }
             itemList.push_back(item);
@@ -2897,11 +2887,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Elemental, Restoration
                 {
-                    item = { 37555, 0 };
+                    item = { 43837, 0 };
                 }
                 else // Enhancement
                 {
-                    item = { 38081, 0 };
+                    item = { 43838, 0 };
                 }
             }
             itemList.push_back(item);
@@ -2933,11 +2923,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Elemental, Restoration
                 {
-                    item = { 36407, -37 };
+                    item = { 43925, 0 };
                 }
                 else // Enhancement
                 {
-                    item = { 36407, -40 };
+                    item = { 43889, 0 };
                 }
             }
             itemList.push_back(item);
@@ -2969,11 +2959,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Elemental, Restoration
                 {
-                    item = { 36686, -44 };
+                    item = { 39143, 0 };
                 }
                 else // Enhancement
                 {
-                    item = { 36490, -40 };
+                    item = { 39144, 0 };
                 }
             }
             itemList.push_back(item);
@@ -3005,7 +2995,7 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Elemental, Restoration
                 {
-                    item = { 36449, -39 };
+                    item = { 42860, 0 };
                 }
                 else // Enhancement
                 {
@@ -3046,11 +3036,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Balance, Restoration
                 {
-                    item = { 36103, -37 };
+                    item = { 43905, 0 };
                 }
                 else // Feral Combat
                 {
-                    item = { 36103, -40 };
+                    item = { 43840, 0 };
                 }
             }
             itemList.push_back(item);
@@ -3082,11 +3072,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Balance, Restoration
                 {
-                    item = { 36435, -37 };
+                    item = { 42793, 0 };
                 }
                 else // Feral Combat
                 {
-                    item = { 36435, -40 };
+                    item = { 42808, 0 };
                 }
             }
             itemList.push_back(item);
@@ -3118,11 +3108,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Balance, Restoration
                 {
-                    item = { 36105, -37 };
+                    item = { 42800, 0 };
                 }
                 else // Feral Combat
                 {
-                    item = { 36105, -40 };
+                    item = { 42869, 0 };
                 }
             }
             itemList.push_back(item);
@@ -3158,11 +3148,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Balance, Restoration
                 {
-                    item = { 36101, -37 };
+                    item = { 43912, 0 };
                 }
                 else // Feral Combat
                 {
-                    item = { 36101, -40 };
+                    item = { 39036, 0 };
                 }
             }
             itemList.push_back(item);
@@ -3194,11 +3184,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Balance, Restoration
                 {
-                    item = { 36099, -37 };
+                    item = { 43914, 0 };
                 }
                 else // Feral Combat
                 {
-                    item = { 36099, -40 };
+                    item = { 43909, 0 };
                 }
             }
             itemList.push_back(item);
@@ -3230,11 +3220,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Balance, Restoration
                 {
-                    item = { 36104, -37 };
+                    item = { 36160, -37 };
                 }
                 else // Feral Combat
                 {
-                    item = { 36104, -40 };
+                    item = { 43896, 0 };
                 }
             }
             itemList.push_back(item);
@@ -3266,11 +3256,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Balance, Restoration
                 {
-                    item = { 36100, -37 };
+                    item = { 42798, 0 };
                 }
                 else // Feral Combat
                 {
-                    item = { 36100, -40 };
+                    item = { 39035, 0 };
                 }
             }
             itemList.push_back(item);
@@ -3302,11 +3292,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Balance, Restoration
                 {
-                    item = { 36106, -37 };
+                    item = { 42865, 0 };
                 }
                 else // Feral Combat
                 {
-                    item = { 36106, -40 };
+                    item = { 39038, 0 };
                 }
             }
             itemList.push_back(item);
@@ -3338,11 +3328,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Balance, Restoration
                 {
-                    item = { 36102, -37 };
+                    item = { 42866, 0 };
                 }
                 else // Feral Combat
                 {
-                    item = { 36102, -40 };
+                    item = { 39040, 0 };
                 }
             }
             itemList.push_back(item);
@@ -3374,11 +3364,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Balance, Restoration
                 {
-                    item = { 36421, -37 };
+                    item = { 42791, 0 };
                 }
                 else // Feral Combat
                 {
-                    item = { 36421, -40 };
+                    item = { 42812, 0 };
                 }
             }
             itemList.push_back(item);
@@ -3410,11 +3400,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Balance, Restoration
                 {
-                    item = { 36420, -37 };
+                    item = { 43874, 0 };
                 }
                 else // Feral Combat
                 {
-                    item = { 36420, -40 };
+                    item = { 42864, 0 };
                 }
             }
             itemList.push_back(item);
@@ -3446,11 +3436,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Balance, Restoration
                 {
-                    item = { 35935, 0 };
+                    item = { 43836, 0 };
                 }
                 else // Feral Combat
                 {
-                    item = { 38080, 0 };
+                    item = { 43829, 0 };
                 }
             }
             itemList.push_back(item);
@@ -3482,11 +3472,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Balance, Restoration
                 {
-                    item = { 37555, 0 };
+                    item = { 43837, 0 };
                 }
                 else // Feral Combat
                 {
-                    item = { 38081, 0 };
+                    item = { 43838, 0 };
                 }
             }
             itemList.push_back(item);
@@ -3518,11 +3508,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Balance, Restoration
                 {
-                    item = { 36407, -37 };
+                    item = { 43925, 0 };
                 }
                 else // Feral Combat
                 {
-                    item = { 36407, -40 };
+                    item = { 43889, 0 };
                 }
             }
             itemList.push_back(item);
@@ -3554,11 +3544,11 @@ private:
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3) // Balance, Restoration
                 {
-                    item = { 36602, -36 };
+                    item = { 36610, -36 };
                 }
                 else // Feral Combat
                 {
-                    item = { 36602, -40 };
+                    item = { 36610, -40 };
                 }
             }
             itemList.push_back(item);
