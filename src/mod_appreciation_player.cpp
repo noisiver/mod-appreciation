@@ -11,10 +11,14 @@ public:
     void OnLevelChanged(Player* player, uint8 oldlevel) override
     {
         if (!sConfigMgr->GetOption<bool>("Appreciation.RewardAtMaxLevel.Enabled", false))
+        {
             return;
+        }
 
         if (player->GetLevel() == sWorld->getIntConfig(CONFIG_MAX_PLAYER_LEVEL) && oldlevel == sWorld->getIntConfig(CONFIG_MAX_PLAYER_LEVEL) - 1)
+        {
             SendMailTo(player, "Certificate of Appreciation", "We truly appreciate you sticking around, enjoying all that we have to offer. We hope you enjoy this certificate which can be redeemed at the nearest appreciation assistant to receive boosts for your characters.", ITEM_CERTIFICATE, 1);
+        }
     }
 
 private:
@@ -25,6 +29,7 @@ private:
         CharacterDatabaseTransaction trans = CharacterDatabase.BeginTransaction();
         MailDraft* mail = new MailDraft(subject, body);
         ItemTemplate const* pProto = sObjectMgr->GetItemTemplate(itemId);
+
         if (pProto)
         {
             Item* mailItem = Item::CreateItem(itemId, itemCount);

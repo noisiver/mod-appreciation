@@ -23,13 +23,19 @@ public:
         uint32 TargetLevel = sConfigMgr->GetOption<uint32>("Appreciation.LevelBoost.TargetLevel", DEFAULT_LEVEL);
 
         if (TargetLevel != 60 && TargetLevel != 70 && TargetLevel != 80)
+        {
             TargetLevel = DEFAULT_LEVEL;
+        }
 
         if (sConfigMgr->GetOption<bool>("Appreciation.LevelBoost.Enabled", true) && player->GetLevel() < TargetLevel)
+        {
             AddGossipItemFor(player, GOSSIP_ICON_CHAT, "I want a character boost", GOSSIP_SENDER_MAIN, GOSSIP_MENU_CHOOSE_SPECIALIZATION);
+        }
 
         if (sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.Enabled", true) && (sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.EasternKingdoms.Enabled", true) || sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.Kalimdor.Enabled", true) || sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.Outland.Enabled", true) || sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.Northrend.Enabled", false)))
+        {
             AddGossipItemFor(player, GOSSIP_ICON_CHAT, "I want to unlock flight paths", GOSSIP_SENDER_MAIN, GOSSIP_MENU_CHOOSE_CONTINENT);
+        }
 
         SendGossipMenuFor(player, GOSSIP_TEXT_DEFAULT, creature->GetGUID());
         return true;
@@ -38,7 +44,9 @@ public:
     bool OnGossipSelect(Player* player, Creature* creature, uint32 sender, uint32 action) override
     {
         if (sender != GOSSIP_SENDER_MAIN)
+        {
             return false;
+        }
 
         if (action == GOSSIP_MENU_CHOOSE_SPECIALIZATION)
         {
@@ -116,16 +124,24 @@ public:
             ClearGossipMenuFor(player);
 
             if (sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.EasternKingdoms.Enabled", true))
+            {
                 AddGossipItemFor(player, GOSSIP_ICON_CHAT, "Eastern Kingdoms", GOSSIP_SENDER_MAIN, GOSSIP_MENU_CHOOSE_EASTERN_KINGDOMS);
+            }
 
             if (sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.Kalimdor.Enabled", true))
+            {
                 AddGossipItemFor(player, GOSSIP_ICON_CHAT, "Kalimdor", GOSSIP_SENDER_MAIN, GOSSIP_MENU_CHOOSE_KALIMDOR);
+            }
 
             if (sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.Outland.Enabled", true))
+            {
                 AddGossipItemFor(player, GOSSIP_ICON_CHAT, "Outland", GOSSIP_SENDER_MAIN, GOSSIP_MENU_CHOOSE_OUTLAND);
+            }
 
             if (sConfigMgr->GetOption<bool>("Appreciation.UnlockContinents.Northrend.Enabled", false))
+            {
                 AddGossipItemFor(player, GOSSIP_ICON_CHAT, "Northrend", GOSSIP_SENDER_MAIN, GOSSIP_MENU_CHOOSE_NORTHREND);
+            }
 
             SendGossipMenuFor(player, GOSSIP_TEXT_CHOOSE_CONTINENT, creature->GetGUID());
         }
@@ -142,7 +158,9 @@ private:
     bool HasCertificate(Player* player)
     {
         if (!sConfigMgr->GetOption<bool>("Appreciation.RequireCertificate.Enabled", true))
+        {
             return true;
+        }
 
         return player->HasItemCount(ITEM_CERTIFICATE);
     }
@@ -161,10 +179,14 @@ private:
         uint32 TargetLevel = sConfigMgr->GetOption<uint32>("Appreciation.LevelBoost.TargetLevel", DEFAULT_LEVEL);
 
         if (TargetLevel != 60 && TargetLevel != 70 && TargetLevel != 80)
+        {
             TargetLevel = DEFAULT_LEVEL;
+        }
 
         if (player->GetLevel() >= TargetLevel)
+        {
             return;
+        }
 
         player->GiveLevel(TargetLevel);
         player->SetUInt32Value(PLAYER_XP, 0);
@@ -177,25 +199,31 @@ private:
         uint8 classId = player->getClass();
 
         if ((classId == CLASS_WARRIOR || classId == CLASS_PALADIN) && !player->HasSkill(SKILL_PLATE_MAIL))
+        {
             player->learnSpell(SPELL_PLATE_MAIL);
+        }
 
         if ((classId == CLASS_SHAMAN || classId == CLASS_HUNTER) && !player->HasSkill(SKILL_MAIL))
+        {
             player->learnSpell(SPELL_MAIL);
+        }
 
-        if ((classId == CLASS_WARRIOR && (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3)) ||
-            (classId == CLASS_PALADIN && specialization == SPECIALIZATION_2))
+        if ((classId == CLASS_WARRIOR && (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3)) || (classId == CLASS_PALADIN && specialization == SPECIALIZATION_2))
         {
             if (!player->HasSkill(SKILL_SWORDS))
+            {
                 player->learnSpell(SPELL_ONE_HANDED_SWORDS);
+            }
 
             player->SetSkill(SKILL_SWORDS, 0, player->GetMaxSkillValue(SKILL_SWORDS), player->GetMaxSkillValue(SKILL_SWORDS));
         }
 
-        if ((classId == CLASS_WARRIOR && specialization == SPECIALIZATION_2) ||
-            (classId == CLASS_PALADIN && specialization == SPECIALIZATION_3))
+        if ((classId == CLASS_WARRIOR && specialization == SPECIALIZATION_2) || (classId == CLASS_PALADIN && specialization == SPECIALIZATION_3))
         {
             if (!player->HasSkill(SKILL_2H_SWORDS))
+            {
                 player->learnSpell(SPELL_TWO_HANDED_SWORDS);
+            }
 
             player->SetSkill(SKILL_2H_SWORDS, 0, player->GetMaxSkillValue(SKILL_2H_SWORDS), player->GetMaxSkillValue(SKILL_2H_SWORDS));
         }
@@ -203,7 +231,9 @@ private:
         if (classId == CLASS_WARRIOR || classId == CLASS_HUNTER)
         {
             if (!player->HasSkill(SKILL_BOWS))
+            {
                 player->learnSpell(SPELL_BOWS);
+            }
 
             player->SetSkill(SKILL_BOWS, 0, player->GetMaxSkillValue(SKILL_BOWS), player->GetMaxSkillValue(SKILL_BOWS));
         }
@@ -211,14 +241,17 @@ private:
         if ((classId == CLASS_WARRIOR && specialization == SPECIALIZATION_1) || classId == CLASS_ROGUE)
         {
             if (!player->HasSkill(SKILL_DUAL_WIELD))
+            {
                 player->learnSpell(SPELL_DUAL_WIELD);
+            }
         }
 
-        if ((classId == CLASS_PALADIN && specialization == SPECIALIZATION_1) ||
-            classId == CLASS_SHAMAN)
+        if ((classId == CLASS_PALADIN && specialization == SPECIALIZATION_1) || classId == CLASS_SHAMAN)
         {
             if (!player->HasSkill(SKILL_MACES))
+            {
                 player->learnSpell(SPELL_ONE_HANDED_MACES);
+            }
 
             player->SetSkill(SKILL_MACES, 0, player->GetMaxSkillValue(SKILL_MACES), player->GetMaxSkillValue(SKILL_MACES));
         }
@@ -226,7 +259,9 @@ private:
         if (classId == CLASS_HUNTER || classId == CLASS_PRIEST || classId == CLASS_MAGE || classId == CLASS_WARLOCK || (classId == CLASS_DRUID && (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_3)))
         {
             if (!player->HasSkill(SKILL_STAVES))
+            {
                 player->learnSpell(SPELL_STAVES);
+            }
 
             player->SetSkill(SKILL_STAVES, 0, player->GetMaxSkillValue(SKILL_STAVES), player->GetMaxSkillValue(SKILL_STAVES));
         }
@@ -234,7 +269,9 @@ private:
         if (classId == CLASS_DRUID && specialization == SPECIALIZATION_2)
         {
             if (!player->HasSkill(SKILL_POLEARMS))
+            {
                 player->learnSpell(SPELL_POLEARMS);
+            }
 
             player->SetSkill(SKILL_POLEARMS, 0, player->GetMaxSkillValue(SKILL_POLEARMS), player->GetMaxSkillValue(SKILL_POLEARMS));
         }
@@ -242,7 +279,9 @@ private:
         if (classId == CLASS_PRIEST || classId == CLASS_MAGE || classId == CLASS_WARLOCK)
         {
             if (!player->HasSkill(SKILL_WANDS))
+            {
                 player->learnSpell(SPELL_WANDS);
+            }
 
             player->SetSkill(SKILL_WANDS, 0, player->GetMaxSkillValue(SKILL_WANDS), player->GetMaxSkillValue(SKILL_WANDS));
         }
@@ -250,12 +289,16 @@ private:
         if (classId == CLASS_ROGUE)
         {
             if (!player->HasSkill(SKILL_DAGGERS))
+            {
                 player->learnSpell(SPELL_DAGGERS);
+            }
 
             player->SetSkill(SKILL_DAGGERS, 0, player->GetMaxSkillValue(SKILL_DAGGERS), player->GetMaxSkillValue(SKILL_DAGGERS));
 
             if (!player->HasSkill(SKILL_THROWN))
+            {
                 player->learnSpell(SPELL_THROWN);
+            }
 
             player->SetSkill(SKILL_THROWN, 0, player->GetMaxSkillValue(SKILL_THROWN), player->GetMaxSkillValue(SKILL_THROWN));
         }
@@ -266,7 +309,9 @@ private:
         std::vector<std::vector<int>> itemList = GetItemList(player->getClass(), specialization);
 
         if (itemList.empty())
+        {
             return;
+        }
 
         for (uint8 slot = EQUIPMENT_SLOT_START; slot < EQUIPMENT_SLOT_TABARD; slot++)
         {
@@ -282,7 +327,9 @@ private:
                     if (Item* item = Item::CreateItem(itemId, 1, player, false, randomProperty > 0 ? randomProperty : 0))
                     {
                         if (randomProperty < 0)
+                        {
                             item->SetUInt32Value(ITEM_FIELD_PROPERTY_SEED, std::abs((int)randomProperty));
+                        }
 
                         player->EquipItem(slot, item, true);
 
@@ -290,12 +337,15 @@ private:
                         {
                             ItemPosCountVec dest;
                             InventoryResult msg = player->CanStoreNewItem(NULL_BAG, NULL_SLOT, dest, itemId, 1);
+
                             if (msg == EQUIP_ERR_OK)
                             {
                                 Item* item = player->StoreNewItem(dest, itemId, true, randomProperty > 0 ? randomProperty : 0);
 
                                 if (randomProperty < 0)
+                                {
                                     item->SetUInt32Value(ITEM_FIELD_PROPERTY_SEED, std::abs((int)randomProperty));
+                                }
 
                                 player->SendNewItem(item, 1, true, false);
                             }
@@ -311,7 +361,9 @@ private:
         uint32 IncludedCopper = sConfigMgr->GetOption<uint32>("Appreciation.LevelBoost.IncludedCopper", 2500000);
 
         if (IncludedCopper <= 0)
+        {
             return;
+        }
 
         player->ModifyMoney(IncludedCopper);
     }
@@ -517,7 +569,9 @@ private:
     void RemoveCertificate(Player* player)
     {
         if (!sConfigMgr->GetOption<bool>("Appreciation.RequireCertificate.Enabled", true))
+        {
             return;
+        }
 
         player->DestroyItemCount(ITEM_CERTIFICATE, 1, true);
     }
@@ -527,7 +581,9 @@ private:
         uint32 TargetLevel = sConfigMgr->GetOption<uint32>("Appreciation.LevelBoost.TargetLevel", DEFAULT_LEVEL);
 
         if (TargetLevel != 60 && TargetLevel != 70 && TargetLevel != 80)
+        {
             TargetLevel = DEFAULT_LEVEL;
+        }
 
         std::vector<std::vector<int>> itemList;
         std::vector<int> item;
@@ -539,23 +595,35 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 14979, 1232 };
+                }
                 else // Protection
+                {
                     item = { 14979, 1231 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 25018, -41 };
+                }
                 else // Protection
+                {
                     item = { 25018, -16 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 39108, 0 };
+                }
                 else // Protection
+                {
                     item = { 43846, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -563,23 +631,35 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 12048, 1208 };
+                }
                 else // Protection
+                {
                     item = { 12048, 1207 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 25070, -41 };
+                }
                 else // Protection
+                {
                     item = { 25070, -16 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 42808, 0 };
+                }
                 else // Protection
+                {
                     item = { 43849, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -587,23 +667,35 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 14981, 2151 };
+                }
                 else // Protection
+                {
                     item = { 14981, 338 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 25028, -41 };
+                }
                 else // Protection
+                {
                     item = { 25028, -16 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 39888, 0 };
+                }
                 else // Protection
+                {
                     item = { 43844, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -615,23 +707,35 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 14975, 1232 };
+                }
                 else // Protection
+                {
                     item = { 14975, 346 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 25008, -41 };
+                }
                 else // Protection
+                {
                     item = { 25008, -16 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 43945, 0 };
+                }
                 else // Protection
+                {
                     item = { 42827, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -639,23 +743,35 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 14977, 2151 };
+                }
                 else // Protection
+                {
                     item = { 14977, 1213 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 25014, -41 };
+                }
                 else // Protection
+                {
                     item = { 25014, -16 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 42882, 0 };
+                }
                 else // Protection
+                {
                     item = { 39471, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -663,23 +779,35 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 14980, 2158 };
+                }
                 else // Protection
+                {
                     item = { 14980, 1228 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 25019, -41 };
+                }
                 else // Protection
+                {
                     item = { 25019, -16 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 43940, 0 };
+                }
                 else // Protection
+                {
                     item = { 43845, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -687,23 +815,35 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 14978, 2154 };
+                }
                 else // Protection
+                {
                     item = { 14978, 338 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 25015, -41 };
+                }
                 else // Protection
+                {
                     item = { 25015, -16 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 39102, 0 };
+                }
                 else // Protection
+                {
                     item = { 42884, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -711,23 +851,35 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 14983, 1205 };
+                }
                 else // Protection
+                {
                     item = { 14983, 287 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 25021, -41 };
+                }
                 else // Protection
+                {
                     item = { 25021, -16 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 39100, 0 };
+                }
                 else // Protection
+                {
                     item = { 42825, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -735,23 +887,35 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 14976, 1217 };
+                }
                 else // Protection
+                {
                     item = { 14976, 1216 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 25017, -41 };
+                }
                 else // Protection
+                {
                     item = { 25017, -16 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 42835, 0 };
+                }
                 else // Protection
+                {
                     item = { 43842, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -759,16 +923,24 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 12017, 1208 };
+                }
                 else // Protection
+                {
                     item = { 12017, 333 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 25056, -41 };
+                }
                 else // Protection
+                {
                     item = { 25056, -16 };
+                }
             }
             else
             {
@@ -780,23 +952,35 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 11980, 1206 };
+                }
                 else // Protection
+                {
                     item = { 11980, 333 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 25056, -41 };
+                }
                 else // Protection
+                {
                     item = { 25056, -16 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 42864, 0 };
+                }
                 else // Protection
+                {
                     item = { 43926, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -804,16 +988,24 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 17774, 0 };
+                }
                 else // Protection
+                {
                     item = { 1490, 0 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 29776, 0 };
+                }
                 else // Protection
+                {
                     item = { 25787, 0 };
+                }
             }
             else
             {
@@ -825,16 +1017,24 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 5079, 0 };
+                }
                 else // Protection
+                {
                     item = { 4130, 0 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 25937, 0 };
+                }
                 else // Protection
+                {
                     item = { 25996, 0 };
+                }
             }
             else
             {
@@ -846,16 +1046,24 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 15437, 1205 };
+                }
                 else // Protection
+                {
                     item = { 15437, 287 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 25042, -41 };
+                }
                 else // Protection
+                {
                     item = { 25042, -16 };
+                }
             }
             else
             {
@@ -867,29 +1075,47 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1) // Arms
+                {
                     item = { 15221, 1199 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Fury
+                {
                     item = { 15256, 1226 };
+                }
                 else // Protection
+                {
                     item = { 15221, 1199 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1) // Arms
+                {
                     item = { 25154, -41 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Fury
+                {
                     item = { 25168, -41 };
+                }
                 else // Protection
+                {
                     item = { 25154, -41 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1) // Arms
+                {
                     item = { 42786, 0 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Fury
+                {
                     item = { 43883, 0 };
+                }
                 else // Protection
+                {
                     item = { 43923, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -897,29 +1123,47 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1) // Arms
+                {
                     item = { 15219, 1197 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Fury
+                {
                     item = { 0, 0 };
+                }
                 else // Protection
+                {
                     item = { 14982, 1197 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1) // Arms
+                {
                     item = { 25153, -41 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Fury
+                {
                     item = { 0, 0 };
+                }
                 else // Protection
+                {
                     item = { 25084, -41 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1) // Arms
+                {
                     item = { 42807, 0 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Fury
+                {
                     item = { 0, 0 };
+                }
                 else // Protection
+                {
                     item = { 43843, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -927,16 +1171,24 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 15289, 683 };
+                }
                 else // Protection
+                {
                     item = { 15289, 185 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1 || specialization == SPECIALIZATION_2) // Arms, Fury
+                {
                     item = { 25252, -41 };
+                }
                 else // Protection
+                {
                     item = { 25252, -16 };
+                }
             }
             else
             {
@@ -949,29 +1201,47 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 14979, 891 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 14979, 1231 };
+                }
                 else // Retribution
+                {
                     item = { 14979, 1232 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 25018, -9 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 25018, -16 };
+                }
                 else // Retribution
+                {
                     item = { 25018, -41 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 42829, 0 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 43846, 0 };
+                }
                 else // Retribution
+                {
                     item = { 39108, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -979,29 +1249,47 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 12048, 784 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 12048, 1207 };
+                }
                 else // Retribution
+                {
                     item = { 12048, 1208 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 25070, -44 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 25070, -16 };
+                }
                 else // Retribution
+                {
                     item = { 25070, -41 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 42793, 0 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 43849, 0 };
+                }
                 else // Retribution
+                {
                     item = { 42808, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -1009,29 +1297,47 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 14981, 876 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 14981, 338 };
+                }
                 else // Retribution
+                {
                     item = { 14981, 2151 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 25028, -44 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 25028, -16 };
+                }
                 else // Retribution
+                {
                     item = { 25028, -41 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 42876, 0 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 43844, 0 };
+                }
                 else // Retribution
+                {
                     item = { 39888, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -1043,29 +1349,47 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 14975, 891 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 14975, 346 };
+                }
                 else // Retribution
+                {
                     item = { 14975, 1232 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 25008, -44 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 25008, -16 };
+                }
                 else // Retribution
+                {
                     item = { 25008, -41 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 42877, 0 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 42827, 0 };
+                }
                 else // Retribution
+                {
                     item = { 43945, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -1073,29 +1397,47 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 14977, 873 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 14977, 1213 };
+                }
                 else // Retribution
+                {
                     item = { 14977, 2151 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 25014, -44 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 25014, -16 };
+                }
                 else // Retribution
+                {
                     item = { 25014, -41 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 43831, 0 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 39471, 0 };
+                }
                 else // Retribution
+                {
                     item = { 42882, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -1103,29 +1445,47 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 14980, 888 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 14980, 1228 };
+                }
                 else // Retribution
+                {
                     item = { 14980, 2158 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 25019, -44 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 25019, -16 };
+                }
                 else // Retribution
+                {
                     item = { 25019, -41 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 42881, 0 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 43845, 0 };
+                }
                 else // Retribution
+                {
                     item = { 43940, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -1133,29 +1493,47 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 14978, 876 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 14978, 338 };
+                }
                 else // Retribution
+                {
                     item = { 14978, 2154 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 25015, -44 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 25015, -16 };
+                }
                 else // Retribution
+                {
                     item = { 25015, -41 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 42883, 0 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 42884, 0 };
+                }
                 else // Retribution
+                {
                     item = { 39102, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -1163,29 +1541,47 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 14983, 864 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 14983, 287 };
+                }
                 else // Retribution
+                {
                     item = { 14983, 1205 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 25021, -44 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 25021, -16 };
+                }
                 else // Retribution
+                {
                     item = { 25021, -41 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 42830, 0 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 42825, 0 };
+                }
                 else // Retribution
+                {
                     item = { 39100, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -1193,29 +1589,47 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 14976, 876 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 14976, 1216 };
+                }
                 else // Retribution
+                {
                     item = { 14976, 1217 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 25017, -44 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 25017, -16 };
+                }
                 else // Retribution
+                {
                     item = { 25017, -41 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 43943, 0 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 43842, 0 };
+                }
                 else // Retribution
+                {
                     item = { 42835, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -1223,29 +1637,47 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 12017, 867 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 12017, 333 };
+                }
                 else // Retribution
+                {
                     item = { 12017, 1208 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 25056, -44 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 25056, -16 };
+                }
                 else // Retribution
+                {
                     item = { 25056, -41 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 43903, 0 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 42812, 0 };
+                }
                 else // Retribution
+                {
                     item = { 42864, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -1253,27 +1685,43 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 11980, 868 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 11980, 333 };
+                }
                 else // Retribution
+                {
                     item = { 11980, 1206 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 25056, -44 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 25056, -16 };
+                }
                 else // Retribution
+                {
                     item = { 25056, -41 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 42791, 0 };
+                }
                 else // Protection, Retribution
+                {
                     item = { 43926, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -1281,27 +1729,43 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 10659, 0 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 1490, 0 };
+                }
                 else // Retribution
+                {
                     item = { 17774, 0 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 25634, 0 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 25787, 0 };
+                }
                 else // Retribution
+                {
                     item = { 29776, 0 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 43837, 0 };
+                }
                 else // Protection, Retribution
+                {
                     item = { 43829, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -1309,27 +1773,43 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 17774, 0 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 4130, 0 };
+                }
                 else // Retribution
+                {
                     item = { 5079, 0 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 30293, 0 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 25996, 0 };
+                }
                 else // Retribution
+                {
                     item = { 25937, 0 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 38763, 0 };
+                }
                 else // Protection, Retribution
+                {
                     item = { 43838, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -1337,27 +1817,43 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 15437, 864 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 15437, 287 };
+                }
                 else // Retribution
+                {
                     item = { 15437, 1205 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 25042, -44 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 25042, -16 };
+                }
                 else // Retribution
+                {
                     item = { 25042, -41 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 43861, 0 };
+                }
                 else // Protection, Retribution
+                {
                     item = { 43924, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -1365,29 +1861,47 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 15229, 2040 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 15221, 1199 };
+                }
                 else // Retribution
+                {
                     item = { 15256, 1226 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 25322, -44 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 25154, -41 };
+                }
                 else // Retribution
+                {
                     item = { 25168, -41 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 39143, 0 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 43923, 0 };
+                }
                 else // Retribution
+                {
                     item = { 43883, 0 };
+                }
             }
             itemList.push_back(item);
 
@@ -1395,29 +1909,47 @@ private:
             if (TargetLevel == 60)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 14982, 2043 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 14982, 1197 };
+                }
                 else // Retribution
+                {
                     item = { 0, 0 };
+                }
             }
             else if (TargetLevel == 70)
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 25084, -44 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 25084, -41 };
+                }
                 else // Retribution
+                {
                     item = { 0, 0 };
+                }
             }
             else
             {
                 if (specialization == SPECIALIZATION_1) // Holy
+                {
                     item = { 42860, 0 };
+                }
                 else if (specialization == SPECIALIZATION_2) // Protection
+                {
                     item = { 43843, 0 };
+                }
                 else // Retribution
+                {
                     item = { 0, 0 };
+                }
             }
             itemList.push_back(item);
 
