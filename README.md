@@ -9,7 +9,7 @@ The item id of the certificate is **20460** and it is set up like an heirloom so
 
 ![image](https://github.com/noisiver/mod-appreciation/assets/5157047/55e9125f-1b66-4813-957d-a0f49206937e)
 
-By default the NPC that provides these services are located in Stormwind City, Orgrimmar and Dalaran. The one in Stormwind City can be found outside the bank in the Trade District, the one in Orgimmar can be found outside Spiritfury Reagents in the Valley of Strength and the one in Dalaran can be found near the central fountain.
+By default the NPC that provides these services are located in Stormwind City, Orgrimmar and Dalaran. The one in Stormwind City can be found outside the auction house in the Trade District, the one in Orgimmar can be found outside Spiritfury Reagents in the Valley of Strength and the one in Dalaran can be found outside the Sunreaver's Sanctuary.
 
 # Suggestions
 If you feel that something would fit right at home inside this module, something the player can get by using a token (if enabled), feel free to create an issue report telling me and I'll think about it.
