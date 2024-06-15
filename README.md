@@ -1,3 +1,5 @@
+[![core-build](https://github.com/noisiver/mod-appreciation/actions/workflows/core-build.yml/badge.svg)](https://github.com/noisiver/mod-appreciation/actions/workflows/core-build.yml)
+
 # Appreciation
 This module allows players to obtain two services. They can get a level boost to 60, 70 or 80 which includes equipment equal to what they would get from quests or they can unlock flight paths in each continent. Choosing one doesn't disable the other.
 
