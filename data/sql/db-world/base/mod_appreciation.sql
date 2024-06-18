@@ -1,5 +1,9 @@
 UPDATE `item_template` SET `subclass`=4, `name`='Certificate of Appreciation', `description`='May be used to give your character a boost', `Quality`=7, `Flags`=134217728, `ItemLevel`=1, `RequiredLevel`=0, `maxcount`=0, `dmg_min1`=0, `dmg_max1`=0, `bonding`=0 WHERE `entry`=20460;
 
+DELETE FROM `item_dbc` WHERE `ID`=20460;
+INSERT INTO `item_dbc` (`ID`, `ClassID`, `SubclassID`, `Sound_Override_Subclassid`, `Material`, `DisplayInfoID`, `InventoryType`, `SheatheType`) VALUES
+(20460, 15, 4, -1, -1, 32846, 0, 0);
+
 SET @Entry := 6000000;
 
 DELETE FROM `npc_text` WHERE `ID` BETWEEN @Entry AND @Entry+3;
