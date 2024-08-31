@@ -14,3 +14,7 @@ By default the NPC that provides these services are located in Stormwind City, O
 # Suggestions
 If you feel that something would fit right at home inside this module, something the player can get by using a token (if enabled), feel free to create an issue report telling me and I'll think about it.
 
+# Pull Requests
+I don't accept pull requests. There are a few exceptions listed below, and all of them have to be true for me to consider merging a pull request.
+- It's something I *really* want or that I think should be included with the module.
+- It matches my code style.
