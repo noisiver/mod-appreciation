@@ -8,7 +8,7 @@ class AppreciationPlayer : public PlayerScript
 public:
     AppreciationPlayer() : PlayerScript("AppreciationPlayer") {}
 
-    void OnLevelChanged(Player* player, uint8 oldlevel) override
+    void OnPlayerLevelChanged(Player* player, uint8 oldlevel) override
     {
         if (!sConfigMgr->GetOption<bool>("Appreciation.RewardAtMaxLevel.Enabled", false))
         {
